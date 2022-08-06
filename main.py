@@ -1,3 +1,5 @@
+from tkinter import *
+from tkinter.font import BOLD, Font
 import random
 def generate_random_length(start,end):
     return random.randint(start,end)
@@ -12,8 +14,11 @@ alphabets.extend(numbers)
 alphabets.extend(special_chars)
 random.shuffle(alphabets)
 alphabets=list(map(lambda a:str(a),alphabets))
-print(alphabets)
-print(len(alphabets))
-print("".join(alphabets))
+root=Tk()
+password=Label(root,text="".join(alphabets),font=Font(weight=BOLD))
+lab=Label(root,text="Your strong random password:")
+password.grid(row=0,column=1,pady=10,padx=0)
+lab.grid(row=0,column=0)
+root.mainloop()
 
 
